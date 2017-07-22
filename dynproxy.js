@@ -21,13 +21,14 @@ function usage() {
 	console.log("Usage: dynproxy [command] [options]");
 	console.log();
 	console.log("Commands:");
-	console.log("  install-service  - Install dynproxy systemd service.");
+	console.log("  install-service    - Install dynproxy systemd service.");
 	console.log("  uninstall-service  - Uninstall dynproxy systemd service.");
 	console.log();
 	console.log("Options:");
 	console.log("  --port=<port>    - Specify listen port.");
 	console.log("  --map-url=<url>  - The url where to look up hosts.");
 	console.log("  --options=<file> - Load options from file.");
+	console.log();
 	process.exit(1);
 }
 

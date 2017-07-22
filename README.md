@@ -20,5 +20,25 @@ Then run it as:
 Where 80 is the port to listen to, and `http://example.com/mapurl.php` is the URL that dynproxy will ask to know how to forward requests.
 
 ## The url mapping service
+As dynproxy receives an incoming request, it will forward the request to a backend server. In
+order to know which server to forward the reqeust to, it will use a REST service to look up
+the host to send the request to. If the `map-url` is set to:
+
+    http://example.com/mapurl.php
+
+And the incoming request is for the url:
+
+    http://www.mysite.com
+
+Then dynproxy will make a request to:
+
+    http://example.com/mapurl.php?host=www.mysite.com
+
+Given this request, dynproxy expects a JSON encoded reply, like this:
+
+    {
+    	"host": "http://backend.com"
+    }
+
 ## Running as a service
 ## Wishlist
