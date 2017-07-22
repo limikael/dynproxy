@@ -18,7 +18,7 @@ var service=require("service-systemd");
  * Print usage.
  */
 function usage() {
-	console.log("Usage: dynproxy [command] [options] <mapurl>");
+	console.log("Usage: dynproxy [command] [options]");
 	console.log();
 	console.log("Commands:");
 	console.log("  install-service  - Install dynproxy systemd service.");
