@@ -10,9 +10,11 @@ outgoing web servers.
 
 ## Installation
 Install dynproxy globally using npm and specifying the GitHub repository:
+
     npm install -g https://github.com/limikael/dynproxy.git
 
 Then run it as:
+
     dynproxy --port=80 --map-url=http://example.com/mapurl.php
 
 Where 80 is the port to listen to, and `http://example.com/mapurl.php` is the URL that dynproxy will ask to know how to forward requests.
