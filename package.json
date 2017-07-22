@@ -1,0 +1,17 @@
+{
+  "name": "dynproxy",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "dynproxy": "./dynproxy.js"
+  },
+  "dependencies": {
+    "http-proxy": "^1.16.2",
+    "js-yaml": "^3.9.0",
+    "minimist": "^1.2.0",
+    "request": "^2.81.0",
+    "service-systemd": "^3.1.4"
+  }
+}

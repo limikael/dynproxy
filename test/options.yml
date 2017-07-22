@@ -1,0 +1,2 @@
+port: 80
+map-url: http://localhost:8888/phone/wp-admin/admin-ajax.php?action=proxymap
