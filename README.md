@@ -43,4 +43,12 @@ Given this request, dynproxy expects a JSON encoded reply, like this:
 This information will be used to process the request.
 
 ## Running as a service
+You might want to run dynproxy as a systemd service. In order to install dynproxy this way, do:
+
+    dynproxy install-service
+
 ## Wishlist
+I consider this little script functioning. However, there are things that would be nice to have:
+
+- It would be nice if the mapping information could be cached. This way dynproxy didn't have to look up the backend
+every request.
