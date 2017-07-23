@@ -48,7 +48,7 @@ You might want to run dynproxy as a systemd service. In order to install dynprox
     dynproxy install-service
 
 ## Wishlist
-I consider this little script functioning. However, there are things that would be nice to have:
+In its current state, this little script works and does its job. However, there are things that would be nice to have:
 
 - It would be nice if the mapping information could be cached. This way dynproxy didn't have to look up the backend
 every request.
