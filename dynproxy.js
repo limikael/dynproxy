@@ -13,6 +13,7 @@ var request=require("request");
 var yaml=require("js-yaml");
 var fs=require("fs");
 var service=require("service-systemd");
+var package=require("./package.json");
 
 /**
  * Print usage.
@@ -28,6 +29,7 @@ function usage() {
 	console.log("  --port=<port>    - Specify listen port.");
 	console.log("  --map-url=<url>  - The url where to look up hosts.");
 	console.log("  --options=<file> - Load options from file.");
+	console.log("  --version        - Print version and exit.");
 	console.log();
 	process.exit(1);
 }
@@ -87,6 +89,11 @@ if (argv._[0]=="uninstall-service") {
 	});
 
 	return;
+}
+
+if (argv['version']) {
+	console.log("dynproxy "+package.version);
+	process.exit();
 }
 
 var fileName=argv.options;
