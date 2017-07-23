@@ -37,7 +37,7 @@ Then dynproxy will make a request to:
 Given this request, dynproxy expects a JSON encoded reply, like this:
 
     {
-    	"host": "http://backend.com"
+        "host": "http://backend.com"
     }
 
 This information will be used to process the request.
