@@ -1,6 +1,12 @@
 # dynproxy
 Dynamically proxy requests by looking up the target host using a rest call
 
+- [Description](https://github.com/limikael/dynproxy#description)
+- [Installation](https://github.com/limikael/dynproxy#installation)
+- [The url mapping service](https://github.com/limikael/dynproxy#the-url-mapping-service)
+- [Running as a service](https://github.com/limikael/dynproxy#running-as-a-service)
+- [Wishlist](https://github.com/limikael/dynproxy#wishlist)
+
 ## Description
 dynproxy is a HTTP proxy, and it listens for incoming HTTP requests and
 forwards these requests to another web server and returns the result to
