@@ -132,7 +132,16 @@ var proxy=HttpProxy.createProxyServer({});
 var server=Http.createServer(function(req, res) {
 	console.log("Request: "+req.headers.host);
 
-	request(mapUrl, function(error, response, body) {
+	var useUrl=mapUrl;
+	if (useUrl.indexOf('?')>=0)
+		useUrl+="&host=";
+
+	else
+		useUrl+="?host=";
+
+	useUrl+=encodeURIComponent(req.headers.host);
+
+	request(useUrl, function(error, response, body) {
 		if (error)
 			return errorEnd(res,"Got error response from backend.\n");
 
@@ -145,13 +154,16 @@ var server=Http.createServer(function(req, res) {
 			return errorEnd(res,"Not valid json from backend.\n");
 		}
 
-		if (!data.target)
+		if (data.target)
+			data.host=data.target;
+
+		if (!data.host)
 			return errorEnd(res,"Got no target from backend.\n");
 
-		if (data.target) {
-			console.log("Proxy: "+data.target);
+		if (data.host) {
+			console.log("Proxy: "+data.host);
 			proxy.web(req, res, {
-				"target": data.target
+				"target": data.host
 			},function(e) {
 				return errorEnd(res,"Internal proxy error.\n");
 			});
