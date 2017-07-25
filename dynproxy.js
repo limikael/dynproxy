@@ -62,6 +62,7 @@ if (argv._[0]=="install-service") {
 		cwd: __dirname,
 		engine: "node",
 		"engine.bin": "/usr/bin/node",
+		pid: "/var/run/dynproxy.pid"
 
 	})
 	.then(() => {
